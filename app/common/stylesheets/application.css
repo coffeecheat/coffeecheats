@@ -1,0 +1,35 @@
+.supersonic-navbar-mock {
+  background-color: #00B5FF !important;
+  text-align: center;
+  font-weight: 600;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+div.mainImage{
+	 margin-bottom: 15px;
+	 display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+} 
+
+div.saveDetailsButton{
+	 margin-top: 15px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+
+/**Declaration of Font Sizes of the Application **/ 
+
+.informationParagraph{
+	font-size:20px
+}
