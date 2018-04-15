@@ -1,13 +1,17 @@
 {
   "drawers": {
     "left": {
-      "id": "leftDrawer",
-      "location": "http://localhost/app/example/drawer.html",
+      "id": "drawer-content",
+      "location": "http://localhost/app/drawer/content.html",
       "showOnAppLoad": false
     },
     "options": {
       "animation": "swingingDoor"
     }
+  },
+  "initialView": {
+    "id": "initialView",
+    "location": "http://localhost/app/modules/index.html"
   },
   "tabs": [],
   "configuration": {

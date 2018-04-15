@@ -12,7 +12,7 @@
     $scope.valid=true;
     // var view = new supersonic.ui.View("example#settings");
     // supersonic.ui.layers.push(view);
-    var modalView = new supersonic.ui.View("home#index");
+    var modalView = new supersonic.ui.View("modules#home");
   var options = {
     animate: true
   }

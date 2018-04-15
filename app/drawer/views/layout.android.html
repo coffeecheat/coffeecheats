@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8">
+
+  <title><%= yield.viewName %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <link rel="stylesheet" href="/bower_components/supersonic/css/supersonic.css" />
+  <link rel="stylesheet" href="/app/common/stylesheets/application.css" />
+  <link rel="import" href="/bower_components/supersonic/components/import.html">
+
+  <script src="http://localhost/cordova.js"></script>
+  <script src="/bower_components/steroids-js/steroids.js"></script>
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/supersonic/supersonic.js"></script>
+  <script src="/bower_components/webcomponentsjs/webcomponents.js"></script>
+
+  <% _.each(yield.modules, function(module) { %>
+  <script src="/app/<%= module %>.js"></script>
+  <% }); %>
+</head>
+<body ng-app="<%= yield.moduleName %>" class="drawer__background">
+
+<%= yield.view %>
+
+</body>
+</html>
