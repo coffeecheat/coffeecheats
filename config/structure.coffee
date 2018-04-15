@@ -3,23 +3,23 @@
 module.exports =
 
   # See styling options for tabs and other native components in app/common/native-styles/ios.css or app/common/native-styles/android.css
-   #  tabs: [
-      # {
-   #      title: "Index"
-     #    id: "index"
+    # tabs: [
+    #   {
+    #     title: "Index"
+    #     id: "index"
     #     location: "example#User_Details" # Supersonic module#view type navigation
     #   }
     #   {
     #   title: "Geolocation"
-   #    id: "geolocation"
-   #    location: "example#User_Coffee_Expense"
-   #    }
-   #    {
-   #      title: "Internet"
-   #      id: "internet"
+    #   id: "geolocation"
+    #   location: "example#User_Coffee_Expense"
+    #   }
+    #   {
+    #     title: "Internet"
+    #     id: "internet"
     #     location: "http://google.com" # URLs are supported!
-   #    }
-   #  ]
+    #   }
+    # ]
    drawers:
 
      left:
@@ -31,7 +31,11 @@ module.exports =
        animation: "swingingDoor"
 
   rootView:
-    location: "example#getting-started"
+    location: "modules#home"
+
+    initialView:
+      id: "initialView"
+      location: "modules#index"
 
   #   preloads: [
    #    {

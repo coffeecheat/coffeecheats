@@ -1,0 +1,33 @@
+<div ng-controller="IndexController">
+
+  <super-navbar>
+    <!-- <super-navbar-button onclick="supersonic.ui.drawers.open()">click -->
+    </super-navbar-button>
+    <super-navbar-title>
+      Coffee Cheats
+    </super-navbar-title>
+  </super-navbar>
+
+
+  <div class="padding">
+    <center><img src="//images/coffe.png" height="50px" width="50px"></img></center>
+    <h1><center>Coffee beans</center></h1>
+    <br>
+    <!--navigation to signup page-->
+    <super-navigate location="modules#signup">
+    <button class="button button-full button-positive">
+      Sign up
+    </button>
+  </super-navigate>
+    <button class="button button-full button-positive">
+      Continue with Facebook
+    </button>
+    <br>
+    <p><center> Already a User?</center></p>
+
+<super-navigate location="modules#login">
+    <button class="button button-full button-positive">
+      Login
+    </button>
+  </super-navigate>
+</div>

@@ -1,0 +1,36 @@
+<div ng-controller="LoginController">
+
+  <super-navbar>
+    <super-navbar-title>
+      Login
+    </super-navbar-title>
+  </super-navbar>
+
+  <div class="padding">
+    <center><h1>Login</h1></center>
+
+    <h6>Username:</h6> <input type="text" id="username"  ng-model="login.username" required>
+    <span ng-show="!login.username.length">username is required.</span>
+    <!-- <span ng-show="login.username.length">Good boy!</span> -->
+    <!-- <span ng-show="login.username.$error.required">username is required.</span> -->
+
+    <br>
+    <h6>Password:</h6> <input type="password" id="password" ng-model="login.password" required>
+    <!-- <span ng-show="login.password.$error.required">password is required.</span> -->
+    <span ng-show="!login.password.length">Password is something!</span>
+    <!-- <span ng-show="login.password.length">Good boy!</span> -->
+
+    <br>
+
+    <button type="submit" class="button button-full button-positive" ng-click="loginclick()">Login</button>
+    <!-- <input type="submit" value="Login" class="button button-full button-positive" ng-click="loginclick()" ng-disabled="myForm.$invalid"> -->
+
+
+    <br>
+    Having trouble logging in?
+    <super-navigate action="click"  location="">
+  Help
+</super-navigate>
+  </div>
+
+</div>
