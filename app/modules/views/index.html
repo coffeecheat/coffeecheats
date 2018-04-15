@@ -19,12 +19,13 @@
       Sign up
     </button>
   </super-navigate>
-
     <button class="button button-full button-positive" ng-click="supersonic.ui.drawers.open('left')">
       Continue with Facebook
     </button>
     <br>
     <p><center> Already a User?</center></p>
+
+    <!-- <button onclick="camera()"> click</button> -->
 
 <super-navigate location="modules#login">
     <button class="button button-full button-positive">
@@ -33,4 +34,23 @@
   </super-navigate>
 
 
-</div>
+
+
+<script>
+var camera=function(){
+
+  supersonic.logger.log('inside');
+              navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+              destinationType: Camera.DestinationType.DATA_URL
+          });
+
+          function onSuccess(imageData) {
+              var image = document.getElementById('myImage');
+              image.src = "data:image/jpeg;base64," + imageData;
+          }
+
+          function onFail(message) {
+              alert('Failed because: ' + message);
+          }
+}
+</script>

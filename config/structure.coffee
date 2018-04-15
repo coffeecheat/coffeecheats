@@ -2,25 +2,11 @@
 
 module.exports =
 
-  # See styling options for tabs and other native components in app/common/native-styles/ios.css or app/common/native-styles/android.css
-    # tabs: [
-    #   {
-    #     title: "Index"
-    #     id: "index"
-    #     location: "example#User_Details" # Supersonic module#view type navigation
-    #   }
-    #   {
-    #   title: "Geolocation"
-    #   id: "geolocation"
-    #   location: "example#User_Coffee_Expense"
-    #   }
-    #   {
-    #     title: "Internet"
-    #     id: "internet"
-    #     location: "http://google.com" # URLs are supported!
-    #   }
-    # ]
-   drawers:
+initialView:
+  id: "initialView"
+  location: "modules#index"
+
+drawers:
      left:
        id: "drawer-content"
        location: "drawer#content"
@@ -28,28 +14,25 @@ module.exports =
      options:
        animation: "swingingDoor"
 
-   # drawers:
-   #  left:
-   #    id: "drawer-content"
-   #    location: "drawer#content"
-   #    showOnAppLoad: false
-   #  options:
-   #    animation: "swingingDoor"
+  rootView:
+    id:"rootview"
+    location: "modules#index"
 
-  # rootView:
-  #   location: "modules#home"
 
-    initialView:
-      id: "initialView"
-      location: "modules#index"
-
-  #   preloads: [
-   #    {
-   #      id: "learn-more"
-   #      location: "example#learn-more"
-    #   }
-    #   {
-    #     id: "using-the-scanner"
-    #     location: "example#using-the-scanner"
-    #   }
-   #  ]
+tabs: [
+  {
+    title: "Index"
+    id: "index"
+    location: "modules#signup" # Supersonic module#view type navigation
+  }
+  {
+  title: "Geolocation"
+  id: "geolocation"
+  location: "modules#User_Coffee_Expense"
+  }
+  {
+    title: "Internet"
+    id: "internet"
+    location: "http://google.com" # URLs are supported!
+  }
+]

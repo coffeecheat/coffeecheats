@@ -1,0 +1,204 @@
+#%RAML 0.8
+title: Steroids Data
+mediaType: application/json
+baseUri: https://rest-api.appgyver.com/v1
+
+traits:
+    - securedBySteroidsApiKey:
+        headers:
+          steroidsApiKey:
+            type: string
+            example: exampleapikey
+            default: 8727671c4146dce09fceb4a16dd505ad95fe47971660a399631c91e309903e10
+          steroidsAppId:
+            type: integer
+            example: 1234
+            default: 177317
+  
+schemas:
+  - userDetails_collection: '{"$schema":"http://json-schema.org/schema","title":"userDetails collection","type":"object","properties":{"objects":{"type":"array","items":{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical userDetails representation","properties":{},"required":[]}}}}'
+  - userDetails_member: '{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical userDetails representation","properties":{"object":{"type":"object","properties":{},"required":[]}}}'
+  - Users_collection: '{"$schema":"http://json-schema.org/schema","title":"Users collection","type":"object","properties":{"objects":{"type":"array","items":{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical Users representation","properties":{},"required":[]}}}}'
+  - Users_member: '{"$schema":"http://json-schema.org/schema","type":"object","description":"The canonical Users representation","properties":{"object":{"type":"object","properties":{},"required":[]}}}'
+
+resourceTypes:
+  - dolan_db_collection:
+      usage: This resourceType should be used for any collection of items
+      is: [ securedBySteroidsApiKey ]
+      get:
+        description: |
+          {
+            "action": "collection"
+          }
+        responses:
+          200:
+            description: |
+              {
+                "rootKey": "objects"
+              }
+            body:
+              application/json:
+                schema: <<resourcePathName>>_collection # e.g cars
+      post:
+        description: |
+          {
+            "action": "create",
+            "rootKey": "object"
+          }
+        body:
+          application/json:
+            schema: <<resourcePathName>>_member
+        responses:
+          200:
+            description: |
+              {
+                "rootKey": "object"
+              }
+            body:
+              application/json:
+                schema: <<resourcePathName>>_member # e.g. car
+
+  - dolan_db_member:
+      usage: This resourceType should be used for any built.io item
+      is: [ securedBySteroidsApiKey ]
+      get:
+        description: |
+          {
+            "action": "find"
+          }
+        responses:
+          200:
+            description: |
+              {
+                "rootKey": "object"
+              }
+            body:
+              application/json:
+                schema: <<resourcePathName>>_member # e.g. car
+      put:
+        description: |
+          {
+            "action": "update",
+            "rootKey": "object"
+          }
+        body:
+          application/json:
+            schema: <<resourcePathName>>_member
+        responses:
+          200:
+            description: |
+              {
+                "rootKey": "object"
+              }
+            body:
+              application/json:
+                schema: <<resourcePathName>>_member
+      delete:
+        description: |
+          {
+            "action": "destroy"
+          }
+        responses:
+          200:
+
+  - built_io_collection:
+      usage: This resourceType should be used for any collection of items
+      is: [ securedBySteroidsApiKey ]
+      get:
+        description: |
+          {
+            "action": "collection"
+          }
+        responses:
+          200:
+            description: |
+              {
+                "rootKey": "objects"
+              }
+            body:
+              application/json:
+                schema: <<resourcePathName>>_collection # e.g cars
+      post:
+        description: |
+          {
+            "action": "create",
+            "rootKey": "object"
+          }
+        body:
+          application/json:
+            schema: <<resourcePathName>>_member
+        responses:
+          200:
+            description: |
+              {
+                "rootKey": "object"
+              }
+            body:
+              application/json:
+                schema: <<resourcePathName>>_member # e.g. car
+
+  - built_io_member:
+      usage: This resourceType should be used for any built.io item
+      is: [ securedBySteroidsApiKey ]
+      get:
+        description: |
+          {
+            "action": "find"
+          }
+        responses:
+          200:
+            description: |
+              {
+                "rootKey": "object"
+              }
+            body:
+              application/json:
+                schema: <<resourcePathName>>_member # e.g. car
+      put:
+        description: |
+          {
+            "action": "update",
+            "rootKey": "object"
+          }
+        body:
+          application/json:
+            schema: <<resourcePathName>>_member
+        responses:
+          200:
+            description: |
+              {
+                "rootKey": "object"
+              }
+            body:
+              application/json:
+                schema: <<resourcePathName>>_member
+      delete:
+        description: |
+          {
+            "action": "destroy"
+          }
+        responses:
+          200:
+
+
+/userDetails:
+  description: |
+    {
+      "resourceName": "userDetails",
+      "identifierKey": "uid"
+    }
+  type: built_io_collection
+  /{id}:
+    type: built_io_member
+
+/Users:
+  description: |
+    {
+      "resourceName": "Users",
+      "identifierKey": "id"
+    }
+  type: dolan_db_collection
+  /{id}:
+    type: dolan_db_member
+
+
