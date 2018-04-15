@@ -21,7 +21,7 @@ module.exports =
    #    }
    #  ]
    drawers:
-   
+
      left:
        id: "leftDrawer"
        location: "example#drawer"
@@ -29,9 +29,9 @@ module.exports =
 
      options:
        animation: "swingingDoor"
-  
-  # rootView:
-  #   location: "example#getting-started"
+
+  rootView:
+    location: "example#getting-started"
 
   #   preloads: [
    #    {
@@ -43,6 +43,3 @@ module.exports =
     #     location: "example#using-the-scanner"
     #   }
    #  ]
-
-
-   
