@@ -8,7 +8,7 @@
 
   $scope.loginclick=function(){
     //alert("inside");
-    if($scope.login.username=='username' && $scope.login.password=='password'){
+    if($scope.login.username=='test' && $scope.login.password=='test'){
     $scope.valid=true;
     // var view = new supersonic.ui.View("example#settings");
     // supersonic.ui.layers.push(view);

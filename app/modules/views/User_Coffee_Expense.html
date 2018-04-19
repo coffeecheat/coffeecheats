@@ -1,16 +1,30 @@
+
+
 <div class="padding">
+	<super-navbar>
+		<super-navbar-title>
+  			Coffee Cheats 
+		</super-navbar-title>
+	</super-navbar>
 
-  <super-navbar>
-    <super-navbar-title>
-      Coffee Cheats 
-    </super-navbar-title>
-  </super-navbar>
+	<div class="mainImage">
+		<img src="https://i.pinimg.com/736x/ee/84/3b/ee843ba0149017ccf6618d8c4fc82250.jpg" alt="Coffee Cup" width="500" height="300" 
+		class="center">
+	</div>
 
-  <div class="mainImage">
-<img src="https://i.pinimg.com/736x/ee/84/3b/ee843ba0149017ccf6618d8c4fc82250.jpg" alt="Coffee Cup" width="500" height="300" 
-class="center">
-</div>
-<div class="center">
- <p class="informationParagraph">This week you have spent $70 on Coffee</p>
-</div>
+	<div class="center">
+		<p class="informationParagraph">This week you have spent $70 on Coffee</p>
+	</div>
+	<!-- bind the controller and use function viewexpenses in the controller -->
+	<div ng-controller="User_Coffe_ExpenseController">
+		<button id="btnName" ng-click="viewExpenses()">Show Expenses!</button> 
+			<p ng-bind="name"></p>
+				<ul>
+					<!-- get the list and display  -->
+					<li ng-repeat="x in names">
+					{{ x.name + ', ' + x.country }}
+					</li>
+				</ul>
+	</div>
+
 </div>
