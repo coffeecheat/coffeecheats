@@ -1,3 +1,58 @@
+<<<<<<< HEAD
+<div ng-controller="DrawerController">
+
+  <super-navbar>
+    <super-navbar-title>
+      Options
+    </super-navbar-title>
+  </super-navbar>
+
+  <div class="padding">
+
+    <button class="button button-full button-positive" style="width:100%">
+  My Details
+</button>
+<button class="button button-full button-positive" style="width:100%">
+My Points
+</button>
+<button class="button button-full button-positive" style="width:100%">
+Settings
+</button>
+    <button class="button button-full button-positive" ng-click="supersonic.ui.drawers.close()" style="width:100%">
+      Close this menu
+    </button>
+
+  </div>
+
+</div>
+||||||| merged common ancestors
+<div ng-controller="DrawerController">
+
+  <super-navbar>
+    <super-navbar-title>
+      Drawer
+    </super-navbar-title>
+  </super-navbar>
+
+  <div class="padding">
+
+    <br>
+    <h3>You found me!</h3>
+    <br>
+
+    <p>This is a native drawer menu. You can add these on either side of the application, or both!</p>
+
+    <p>To close the menu, <b>swipe</b> from the edge, <b>tap</b> the original view or <b>tap</b> the button below.</p>
+
+    <br>
+    <button class="button button-positive button-block" ng-click="supersonic.ui.drawers.close()">
+      Close this menu
+    </button>
+
+  </div>
+
+</div>
+=======
 <script>
   document.addEventListener("touchmove", function(e){
     e.preventDefault();
@@ -10,3 +65,4 @@
    <li class="item"><super-navigate location="modules#User_Details">My Details</super-navigate></li>
    <li class="item"><super-navigate location="modules#User_Coffee_Expense">History</super-navigate></li>
 </ul>
+>>>>>>> 3432e9390a37a63045a521834d308bb9d737cbc4
