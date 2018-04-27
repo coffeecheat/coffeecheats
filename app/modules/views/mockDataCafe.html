@@ -1,0 +1,29 @@
+<div ng-controller="MockDataController">
+  <!-- <button id="btnName" ng-click="viewExpenses()">Show Expenses!</button>
+    <p ng-bind="name"></p> -->
+      <center><h3> Coffee Cheats</h3></center>
+      <br>
+      <br>
+      <center><h3>Cafes Nearby</h3></center>
+      <table ng-repeat="cafe in Cafes">
+      <tr >
+        <td>Name</td><td>{{cafe.CafeName}}</td></h5>
+      </tr>
+      <tr>
+        <td>Contact No.</td><td>{{cafe.ContactNo}}</td>
+      </tr>
+      <tr>
+        <td>Description</td><td>{{cafe.Description}}</td>
+      </tr>
+      <tr>
+        <td>Address</td><td>{{cafe.Address.Text}}</td>
+      </tr>
+      <tr>
+        <td>Directions</td><td><button ng-click="directions(cafe.Address.Directions)">Directions</button></td>
+      </tr>
+      <tr>
+        <td></td><td></td>
+      </tr>
+      <br>
+    </table>
+</div>
