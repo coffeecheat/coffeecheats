@@ -39,3 +39,37 @@ div.saveDetailsButton{
 .informationParagraph{
 	font-size:20px
 }
+
+.dropbtn {
+    background-color: #LightGray;
+    color:black;
+    padding: 10px;
+    font-size: 12px;
+    border: ridge;
+    cursor: pointer;
+}
+
+.favCoffeeCmb{
+  margin-left: 25px; 
+}
+
+#paymentHistory {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#paymentHistory td, #paymentHistory th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#paymentHistory tr:nth-child(even){background-color: #a5cde2;}
+
+#paymentHistory th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4c7daf;
+    color: white;
+}

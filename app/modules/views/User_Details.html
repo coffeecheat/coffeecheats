@@ -1,3 +1,4 @@
+
 <div class="padding">
 
   <super-navbar>
@@ -22,12 +23,24 @@
     </label>
 
      <!-- Bind to the userdetails controller to display the list of baristas  -->
-     <div ng-controller="UserDetailsController" class="item item-input">
-      <select ng-model="selectedBarista" ng-options="iter for iter in baristaList" >
+     
+     <div ng-controller="UserDetailsController" class="item item-input">      
+      <div class class="dropdown-menu">
+      <select ng-model="selectedBarista" ng-options="iter for iter in baristaList" class="dropbtn">
         <option value="" selected="selected">Favourite Barista</option>
       </select>
+      </div>
+
+      <div class ="dropdown-menu">
+      <div class = "favCoffeeCmb">
+      <select ng-model="coffeelist" ng-options="iter for iter in coffeeList" class="dropbtn">
+        <option value="" selected="selected">Favourite Coffee</option>
+      </select>
+      </div>
+      </div>
     </div>
-</div>
+
+  </div>
 <div class="saveDetailsButton">
 <button class="button button-large button-positive">
  Save Details
@@ -35,3 +48,4 @@
 </div>
 <div>
 </div>
+
