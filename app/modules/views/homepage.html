@@ -1,6 +1,9 @@
 <div class="padding">
 
-  <super-navbar> 
+  <super-navbar>
+     <super-navbar-button side="left" onclick="optionClick()">
+           Settings
+    </super-navbar-button>
     <super-navbar-title>
       Coffee Cheats
     </super-navbar-title>
@@ -14,3 +17,12 @@
 
 
 </div>
+
+<script>
+
+function optionClick()
+{
+  supersonic.ui.drawers.enable();
+  supersonic.ui.drawers.open();
+}
+</script>

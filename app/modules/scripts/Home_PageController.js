@@ -1,7 +1,7 @@
 angular
 	.module("modules")
 	.controller("homepage_Controller", function($scope, supersonic){
-		supersonic.ui.drawers.close(); 
+		supersonic.ui.drawers.disable(); 
 
 		// function to display the favourite baritsa of the user
 		// $scope.viewFavBaritsa=function(){

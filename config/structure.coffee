@@ -6,6 +6,7 @@ initialView:
   id: "initialView"
   location: "modules#index"
 
+
 drawers:
      left:
        id: "drawer-content"
@@ -17,6 +18,3 @@ drawers:
   rootView:
     id:"rootview"
     location: "modules#homepage"
-
-
-

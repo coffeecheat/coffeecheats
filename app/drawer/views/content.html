@@ -1,13 +1,25 @@
 
-<script>
+<!-- <script>
   document.addEventListener("touchmove", function(e){
     e.preventDefault();
   });
-</script>
+</script> -->
 
 <!-- Add menu items to the below list  -->
 <ul class="list">
-  <li class="item"><super-navigate location="modules#homepage">Home</super-navigate></li>
-   <li class="item"><super-navigate location="modules#User_Details">My Details</super-navigate></li>
-   <li class="item"><super-navigate location="modules#User_Coffee_Expense">History</super-navigate></li>
+  <!-- <li class="item" onclick="navigateTo('modules#homepage')">Home</li> -->
+   <li class="item" onclick="navigateTo('modules#User_Details')">My Details</li>
+   <li class="item" onclick="navigateTo('modules#User_Coffee_Expense')">History</li>
+   <li class="item" onclick="navigateTo('steroids.initialView.show()')'">Sign out</li>
 </ul>
+
+
+<script>
+
+
+function navigateTo(location)
+{
+  supersonic.ui.drawers.disable();
+  supersonic.ui.layers.push(location);
+}
+</script>
