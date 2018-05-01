@@ -1,4 +1,4 @@
-<div ng-controller="LoginController">
+<div ng-controller="MockDataController">
 
   <super-navbar>
     <super-navbar-title>
@@ -9,6 +9,12 @@
   <div class="padding">
     <center><h1>Login</h1></center>
 
+
+    <!-- <ul>
+      <li ng-repeat=" opt in Users">
+          {{ opt.email|uppercase }}
+      </li>
+      </ul> -->
     <h6>Username:</h6> <input type="text" id="username"  ng-model="login.username" required>
     <span ng-show="!login.username.length">username is required.</span>
     <!-- <span ng-show="login.username.length">Good boy!</span> -->

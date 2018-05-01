@@ -7,6 +7,7 @@
 
 
   $scope.loginclick=function(){
+
     //alert("inside");
     if($scope.login.username=='test' && $scope.login.password=='test'){
     $scope.valid=true;
