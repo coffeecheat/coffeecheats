@@ -40,16 +40,15 @@ div.saveDetailsButton{
 	font-size:20px
 }
 
-.dropbtn {
+.dropdown {
     background-color: #LightGray;
     color:black;
     padding: 10px;
     font-size: 12px;
-    border: ridge;
-    cursor: pointer;
+    cursor: pointer;    
 }
 
-.favCoffeeCmb{
+.dropDownSpacingFormat{
   margin-left: 25px; 
 }
 

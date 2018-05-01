@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
 <div class="padding">
 
@@ -24,22 +25,24 @@
 
      <!-- Bind to the userdetails controller to display the list of baristas  -->
      
-     <div ng-controller="UserDetailsController" class="item item-input">      
-      <div class class="dropdown-menu">
-      <select ng-model="selectedBarista" ng-options="iter for iter in baristaList" class="dropbtn">
+     <div ng-controller="UserDetailsController" class="item item-input">    
+     <label for="favBarista">Favourite Barista :</label>  
+      <div class ="dropDownSpacingFormat">
+      <select ng-model="selectedBarista" ng-options="iter for iter in baristaList" class="btn btn-info dropdown-toggle"
+      data-toggle="dropdown">
         <option value="" selected="selected">Favourite Barista</option>
       </select>
-      </div>
-
-      <div class ="dropdown-menu">
-      <div class = "favCoffeeCmb">
-      <select ng-model="coffeelist" ng-options="iter for iter in coffeeList" class="dropbtn">
+      </div>      
+    </div>
+    <div ng-controller="UserDetailsController" class="item item-input">            
+     <label for="favBarista">Favourite Coffee :&nbsp;</label>  
+      <div class ="dropDownSpacingFormat">
+      <select ng-model="coffeelist" ng-options="iter for iter in coffeeList" class="btn btn-info dropdown-toggle"
+      data-toggle="dropdown">
         <option value="" selected="selected">Favourite Coffee</option>
       </select>
       </div>
       </div>
-    </div>
-
   </div>
 <div class="saveDetailsButton">
 <button class="button button-large button-positive">
