@@ -11,13 +11,6 @@
     width: 50%;
 }
 
-div.mainImage{
-	 margin-bottom: 15px;
-	 display: block;
-     margin-left: auto;
-     margin-right: auto;
-     width: 50%;
-}
 
 #username,#password
 {
@@ -25,14 +18,37 @@ div.mainImage{
   width: 100%;
 }
 
+/* Declare any css made for divs here */
+
+div.mainImage{
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 div.saveDetailsButton{
-	 margin-top: 15px;
 	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+div.qrCodeLogo{
+   
+        position: absolute;
+        bottom: 40px;
+        left: 250px;
+    
+}
+
+div.qrDisplayCode{
+   
+    display: block;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
 }
-
 
 /**Declaration of Font Sizes of the Application **/
 
@@ -51,6 +67,7 @@ div.saveDetailsButton{
 .dropDownSpacingFormat{
   margin-left: 25px; 
 }
+
 
 #paymentHistory {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
