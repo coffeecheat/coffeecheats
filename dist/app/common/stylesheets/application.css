@@ -54,21 +54,12 @@ div.qrDisplayCode{
 	font-size:20px
 }
 
-.dropdown {
-    background-color: #LightGray;
-    color:black;
-    padding: 10px;
-    font-size: 12px;
-    cursor: pointer;    
-}
 
-<<<<<<< HEAD
 .favCoffeeCmb{
   margin-left: 25px;
-=======
+}
 .dropDownSpacingFormat{
   margin-left: 25px; 
->>>>>>> updated-userinterfaces
 }
 
 
