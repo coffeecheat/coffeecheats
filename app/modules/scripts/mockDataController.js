@@ -1,8 +1,8 @@
 angular
-	.module('modules')
-	.controller('MockDataController', function($scope, supersonic) {
+	.module('modules',['common'])
+	.controller('MockDataController', function($scope, supersonic,DataService,DataFactory,MockDataService) {
 
-//mock cafe data
+		//mock cafe data
     $scope.Cafes = [
           {
             CafeId:'1',CafeName:'Haddons',AddressID:1,Rating:'5',ContactNo:'0455243123',
@@ -29,6 +29,15 @@ angular
           }
         ];
 
+				// $localStorage.Users=[
+	     //   {
+	     //     id: 1,name:'Kulbeer',email:'ss.kulbeer24@gmail.com',password:'test',favCafe:'name',favDrink:'Mocha',topup:10
+	     //   },
+	     //   {
+	     //     id: 2,name:'passi',email:'ss.passi@gmail.com',password:'test',favCafe:'name',favDrink:'Mocha',topup:10
+	     //   }
+	     // ];
+
 						$scope.change = function(item) {
 				            $scope.selecteditem = item;
 				        }
@@ -44,45 +53,47 @@ angular
 											name:'Cappucino'
 										}
 									];
-					//mock user data
-									$scope.Users=[
-										{
-											id: 1,name:'Kulbeer',email:'ss.kulbeer24@gmail.com',password:'test',favCafe:'name',favDrink:'Mocha',topup:10
-										},
-										{
-											id: 2,name:'passi',email:'ss.passi@gmail.com',password:'test',favCafe:'name',favDrink:'Mocha',topup:10
-										}
-									];
 
+
+									$scope.Users=MockDataService.getUsers();
+
+
+										function refreshData()
+										{
+											supersonic.logger.debug('refreshing data');
+											$scope.Users=MockDataService.getUsers();
+
+											supersonic.logger.debug('new count'+$scope.Users.length);
+										}
 
 
 									$scope.userModel={
 										id:0,name:'',email:'',password:'',favCafe:'',favDrink:'',topup:0
 									};
 
-									// $scope.addUsers=function(){
-									// 	supersonic.logger.debug('addusers_init');
-									//
-									//
-									// 	clearModel();
-									// };
+								//	$scope.loginData=[];
 
 
+							function addUsersData(){
+								// var _user={
+								// 	id:$scope.userModel.id,
+								// 	name:$scope.userModel.name,
+								// 	email:$scope.userModel.email,
+								// 	password:$scope.userModel.password,
+								// 	favCafe:$scope.userModel.favCafe,
+								// 	favDrink:$scope.userModel.favDrink,
+								// 	topup:$scope.userModel.topup
+								// };
+								supersonic.logger.debug('add in controller');
+								MockDataService.addUser($scope.userModel);
+								$scope.Users=MockDataService.getUsers();
 
-							$scope.addUsersData=function(){
-								var _user={
-									id:$scope.userModel.id,
-									name:$scope.userModel.name,
-									email:$scope.userModel.email,
-									password:$scope.userModel.password,
-									favCafe:$scope.userModel.favCafe,
-									favDrink:$scope.userModel.favDrink,
-									topup:$scope.userModel.topup
-								};
+								supersonic.logger.debug('new count'+MockDataService.getUsers().length);
 							};
 
-							$scope.bindSelectedData=function(sname,semail,spassword,sfavCafe,sfavDrink,stopup){
-								$scope.userModel.id=$scope.EmpList.length + 1;
+							function bindSelectedData(sname,semail,spassword,sfavCafe,sfavDrink,stopup){
+								supersonic.logger.debug('binding');
+								$scope.userModel.id=$scope.Users.length + 1;
 								$scope.userModel.name=sname;
 								$scope.userModel.email=semail;
 								$scope.userModel.password=spassword;
@@ -103,20 +114,30 @@ angular
 
 				$scope.signup=function(sname,semail,spassword,sfavCafe,sfavDrink,stopup){
 					//	supersonic.logger.debug('sid:'+$window.sId);
-					supersonic.logger.debug('string');
-					// bindSelectedData(sname,semail,spassword,sfavCafe,sfavDrink,stopup);
+					supersonic.logger.debug('signup started');
+					var _user={
+	        	id:$scope.Users.length + 1,
+	        	name:sname,
+	        	email:semail,
+	        	password:spassword,
+	        	favCafe:sfavCafe,
+	        	favDrink:sfavDrink,
+	        	topup:stopup
+	        };
+					//$rootScope.persistedUsers.push(_user);
+					//bindSelectedData(sname,semail,spassword,sfavCafe,sfavDrink,stopup);
+					MockDataService.addUser($scope.Users.length + 1,sname,semail,spassword,sfavCafe,sfavDrink,stopup);
+					//DataService.addUser($scope.Users.length + 1,sname,semail,spassword,sfavCafe,sfavDrink,stopup);
+					//DataService.setScope($scope);
 					// addUsersData();
-					// clearModel();
-					$scope.Users.push({id: $scope.Users.length + 1,name:sname,email:semail,password:spassword,favCafe:sfavCafe,favDrink:sfavDrink,topup:stopup});
+					//  clearModel();
+					 //srefreshData();
+				//	 $scope.loginData=$scope.Users;
+					//$scope.Users.push({id: $scope.Users.length + 1,name:sname,email:semail,password:spassword,favCafe:sfavCafe,favDrink:sfavDrink,topup:stopup});
+				//	var view = new supersonic.ui.View("modules#login");
+					//supersonic.ui.layers.push(view);
+				//	supersonic.ui.initialView.show();
 
-				//
-
-			// 		$scope.$apply(function () {
-			// 			steroids.initialView.show();
-						// var view = new supersonic.ui.View("modules#login");
-						// supersonic.ui.layers.push(view);
-    	// });
-				//	alert("haha");
 				}
       $scope.directions=function(latlong){
           var string="https://www.google.com/maps/search/?api=1&query="+latlong+"&travelmode=driving&dir_action=navigate";
@@ -125,20 +146,24 @@ angular
 
         };
 
-				// $scope.loginclick=function(){
-			  //   //alert("inside");
-			  //   if($scope.login.username=='test' && $scope.login.password=='test'){
-			  //   $scope.valid=true;
-			  // steroids.initialView.dismiss();
-			  //   }
-			  //   else {
-			  //     $scope.valid=false;
-			  //   }
-				//
-			  //   //alert('Invalid Username and/or Password');
-			  // };
+				$scope.loginclick_test=function(){
+			    //alert("inside");
+			    if($scope.login.username=='test' && $scope.login.password=='test'){
+			    $scope.valid=true;
+			  steroids.initialView.dismiss();
+			    }
+			    else {
+			      $scope.valid=false;
+			    }
+
+			    //alert('Invalid Username and/or Password');
+			  };
 
 				$scope.loginclick=function(){
+				//refreshData();
+				supersonic.logger.debug('count on MockDataController for login :'+$scope.Users[$scope.Users.length-1].name);
+				}
+				$scope.loginclick_original=function(){
 			    for(var i = 0; i < $scope.Users.length; i++)
 			       {
 							 supersonic.logger.debug(angular.uppercase($scope.Users[i].email)+','+angular.uppercase($scope.Users[i].password));

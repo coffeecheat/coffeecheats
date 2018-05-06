@@ -10,11 +10,13 @@
     <center><h1>Login</h1></center>
 
 
-    <!-- <ul>
+    <ul>
       <li ng-repeat=" opt in Users">
-          {{ opt.email|uppercase }}
+          {{ opt.name }}
       </li>
-      </ul> -->
+      </ul>
+
+      <form class="modal-content" name="personForm" novalidate>
     <h6>Username:</h6> <input type="text" id="username"  ng-model="login.username" required>
     <span ng-show="!login.username.length">username is required.</span>
     <!-- <span ng-show="login.username.length">Good boy!</span> -->
@@ -30,7 +32,7 @@
 
     <button type="submit" class="button button-full button-positive" ng-click="loginclick()">Login</button>
     <!-- <input type="submit" value="Login" class="button button-full button-positive" ng-click="loginclick()" ng-disabled="myForm.$invalid"> -->
-
+</form>
 
     <br>
     Having trouble logging in?
