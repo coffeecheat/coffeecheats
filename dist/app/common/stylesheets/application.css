@@ -11,6 +11,13 @@
     width: 50%;
 }
 
+div.mainImage{
+	 margin-bottom: 15px;
+	 display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+}
 
 #username,#password
 {
@@ -18,35 +25,14 @@
   width: 100%;
 }
 
-/* Declare any css made for divs here */
-
-div.mainImage{
-    margin-bottom: 15px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-
 div.saveDetailsButton{
+	 margin-top: 15px;
 	display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
-    width: 30%;
-}
-div.qrCodeLogo{
-   
-        position: absolute;
-        bottom: 40px;
-        left: 250px;
-    
+    width: 40%;
 }
 
-div.qrDisplayCode{   
-    margin-left: 85px;
-    margin-top: 70px;
-}
 
 /**Declaration of Font Sizes of the Application **/
 
@@ -54,14 +40,18 @@ div.qrDisplayCode{
 	font-size:20px
 }
 
+.dropbtn {
+    background-color: #LightGray;
+    color:black;
+    padding: 10px;
+    font-size: 12px;
+    border: ridge;
+    cursor: pointer;
+}
 
 .favCoffeeCmb{
   margin-left: 25px;
 }
-.dropDownSpacingFormat{
-  margin-left: 25px; 
-}
-
 
 #paymentHistory {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;

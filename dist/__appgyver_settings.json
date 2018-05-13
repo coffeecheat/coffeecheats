@@ -1,0 +1,24 @@
+{
+  "drawers": {
+    "left": {
+      "id": "drawer-content",
+      "location": "http://localhost/app/drawer/content.html",
+      "showOnAppLoad": false
+    },
+    "options": {
+      "animation": "swingingDoor"
+    }
+  },
+  "initialView": {
+    "id": "initialView",
+    "location": "http://localhost/app/modules/index.html"
+  },
+  "tabs": [],
+  "rootView": {
+    "id": "rootview",
+    "location": "http://localhost/app/modules/homepage.html"
+  },
+  "configuration": {
+    "extra_response_headers": {}
+  }
+}

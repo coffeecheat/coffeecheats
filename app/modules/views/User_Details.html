@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
 <div class="padding">
 
@@ -9,7 +8,7 @@
   </super-navbar>
 
   <div class="mainImage">
-    <img src="http://icons.iconarchive.com/icons/aha-soft/people/256/user-info-icon.png" alt="User Info Icon" width="150" height="150"/> 
+    <img src="http://icons.iconarchive.com/icons/aha-soft/people/256/user-info-icon.png" alt="Flowers in Chania" width="200" height="200"/> 
   </div>
 
   <div class="userInformation">
@@ -25,27 +24,25 @@
 
      <!-- Bind to the userdetails controller to display the list of baristas  -->
      
-     <div ng-controller="UserDetailsController" class="item item-input">    
-     <label for="favBarista">Favourite Barista :</label>  
-      <div class ="dropDownSpacingFormat">
-      <select ng-model="selectedBarista" ng-options="iter for iter in baristaList" class="btn btn-info dropdown-toggle"
-      data-toggle="dropdown">
+     <div ng-controller="UserDetailsController" class="item item-input">      
+      <div class class="dropdown-menu">
+      <select ng-model="selectedBarista" ng-options="iter for iter in baristaList" class="dropbtn">
         <option value="" selected="selected">Favourite Barista</option>
       </select>
-      </div>      
-    </div>
-    <div ng-controller="UserDetailsController" class="item item-input">            
-     <label for="favBarista">Favourite Coffee :&nbsp;</label>  
-      <div class ="dropDownSpacingFormat">
-      <select ng-model="coffeelist" ng-options="iter for iter in coffeeList" class="btn btn-info dropdown-toggle"
-      data-toggle="dropdown">
+      </div>
+
+      <div class ="dropdown-menu">
+      <div class = "favCoffeeCmb">
+      <select ng-model="coffeelist" ng-options="iter for iter in coffeeList" class="dropbtn">
         <option value="" selected="selected">Favourite Coffee</option>
       </select>
       </div>
       </div>
+    </div>
+
   </div>
 <div class="saveDetailsButton">
-<button class="btn btn-primary">
+<button class="button button-large button-positive">
  Save Details
 </button>
 </div>
