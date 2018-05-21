@@ -43,6 +43,11 @@ div.qrCodeLogo{
     
 }
 
+div.coffeeCupLogo{
+    position: absolute;
+    bottom: 40px;
+    left:50px;
+}
 div.qrDisplayCode{   
     margin-left: 85px;
     margin-top: 70px;
@@ -122,7 +127,7 @@ button:hover {
 }
 
 .errormsg{
-  color: :red;
+  color: : red;
 }
 
 /* Extra styles for the cancel button */
